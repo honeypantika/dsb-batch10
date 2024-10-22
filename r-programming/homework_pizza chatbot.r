@@ -1,13 +1,14 @@
-# 0. install packages & load libraries
-install.packages("tidyverse")
-install.packages("glue")
+## Design pizza chatbot
+# 1. install packages & load library
+  install.packages("tidyverse")
+  install.packages("glue")
 
-library(tidyverse)
-library(glue)
+  library(tidyverse)
+  library(glue)
 
-hello_pizza <- function() {
+  hello_pizza <- function() {
   
-# 1. present menu to customer
+# 2. present menu to customer
   pizza_menu <- tibble(
     no = 1:10,
     menu = c("Hawaiian", "Margharita", "Pepperoni", "Super Bacon", 
@@ -33,12 +34,12 @@ hello_pizza <- function() {
   
   full_menu <- rbind(pizza_menu, appetizer_menu, drink_menu)
   
-# 2. greeting 
+# 3. greeting 
   print("Welcome to Honey Pizzeria!")
   print("What is your name?")
   customer_name <- readline("Enter name: ")
   
-# 3. ordering, print order receipt, calculate total payment
+# 4. ordering, print order receipt, calculate total payment
   print("We offer a variety of pizzas, appetizers, and drinks menu")
   print(full_menu)
   print("What would you like to order today?")
@@ -60,23 +61,21 @@ hello_pizza <- function() {
   order_df <- tibble(no = as.numeric(all_order), 
                      quantity = as.numeric(all_quantity))
   
-  
   receipt <- full_menu %>%
     select(no, menu, price) %>%
     inner_join(order_df, by = c("no" = "no")) %>%
     mutate(total = price * quantity)
   print(receipt)
   
-  
   total_payment <- receipt %>%
     summarise(order_total = sum(total))
   print(total_payment)
   
-# 4. ask for payment option
+# 5. ask for payment option
   print("Would you like to pay by cash or credit card?")
   payment_option <- readline("Enter payment: ")
   
-# 5. customer order 
+# 6. customer order 
   print(glue("This is {customer_name}'s order:"))
   print(receipt)
   print(glue("Total Payment: {total_payment} Bath"))
