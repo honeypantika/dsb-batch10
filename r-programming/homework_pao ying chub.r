@@ -1,7 +1,7 @@
 ## Designing a Rock, Paper, Scissors Game in R
 
 # 1. Define functions for each choice
-    hammer_wins <- function(choice) choice == "scissors"
+    rock_wins <- function(choice) choice == "scissors"
     paper_wins <- function(choice) choice == "rock"
     scissors_wins <- function(choice) choice == "paper"
     # -- If both players choose the same, it is a tie --
