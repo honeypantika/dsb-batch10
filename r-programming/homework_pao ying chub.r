@@ -1,5 +1,4 @@
-## Designing a Rock, Paper, Scissors Game in R
-
+## Design pao ying chub game
 # 1. Define functions for each choice
     rock_wins <- function(choice) choice == "scissors"
     paper_wins <- function(choice) choice == "rock"
