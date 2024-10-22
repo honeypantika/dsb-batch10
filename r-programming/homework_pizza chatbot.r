@@ -8,7 +8,7 @@
 
   hello_pizza <- function() {
   
-# 2. present menu to customer
+# 2. present menu 
   pizza_menu <- tibble(
     no = 1:10,
     menu = c("Hawaiian", "Margharita", "Pepperoni", "Super Bacon", 
@@ -39,7 +39,7 @@
   print("What is your name?")
   customer_name <- readline("Enter name: ")
   
-# 4. ordering, print order receipt, calculate total payment
+# 4. ordering
   print("We offer a variety of pizzas, appetizers, and drinks menu")
   print(full_menu)
   print("What would you like to order today?")
@@ -71,7 +71,7 @@
     summarise(order_total = sum(total))
   print(total_payment)
   
-# 5. ask for payment option
+# 5. payment option
   print("Would you like to pay by cash or credit card?")
   payment_option <- readline("Enter payment: ")
   
