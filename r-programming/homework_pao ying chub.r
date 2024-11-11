@@ -1,11 +1,11 @@
 ## Design pao ying chub game
-# 1. Define functions for each choice
+# 1. define functions for each choice
     rock_wins <- function(choice) choice == "scissors"
     paper_wins <- function(choice) choice == "rock"
     scissors_wins <- function(choice) choice == "paper"
     # -- If both players choose the same, it is a tie --
 
-# 2. Function to determine the winner based on choices
+# 2. function to determine the winner based on choices
     determine_winner <- function(user_choice, computer_choice) {
       if (user_choice == computer_choice) {
         message("It's a tie!")
@@ -21,7 +21,7 @@
       }
     }
     
-# 3. Function to play a single round
+# 3. function to play a single round
     play_round <- function() {
       user_choice <- sample(c("rock", "paper", "scissors"), 1)
       computer_choice <- sample(c("rock", "paper", "scissors"), 1)
@@ -33,7 +33,7 @@
       cat("score:", score, "\n")
     }
 
-# 4. Play multiple rounds
+# 4. play multiple rounds
     num_rounds <- 10  # Adjust the number of rounds as desired
     for (i in 1:num_rounds) {
       play_round()
